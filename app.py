@@ -263,7 +263,7 @@ elif menu == "4. Cek Pertumbuhan (Orang Tua)":
     daftar_anak['Label'] = daftar_anak['Nama Balita'] + " (NIK: " + daftar_anak['NIK'] + " - Ortu: " + daftar_anak['Nama Ortu'] + ")"
 
     pilihan = st.selectbox("Cari Nama Anak / NIK:", options=daftar_anak['Label'].tolist())
-    nik_terpilih = daftar_anak.loc[daftar_anak['Label'] == pilihan, 'NIK'].values[0]
+    nik_terpilih = daftar_anak.loc[daftar_anak['Label'] == pilihan, 'NIK'].iloc[0]
 
     riwayat_anak = df[df['NIK'] == nik_terpilih].sort_values('Tanggal Pengukuran')
     terbaru = riwayat_anak.iloc[-1]
